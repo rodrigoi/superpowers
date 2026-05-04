@@ -83,3 +83,38 @@ Before proposing changes to skill design, workflow philosophy, or architecture, 
 - One problem per PR
 - Test on at least one harness and report results in the environment table
 - Describe the problem you solved, not just what you changed
+
+## Keeping Your Fork Updated
+
+If you maintain a fork of superpowers, keep it synced with upstream:
+
+**Initial setup:**
+```bash
+# Add upstream remote (already done if you followed setup)
+git remote add upstream https://github.com/anomalyco/superpowers.git
+
+# Verify remotes
+git remote -v
+# origin should point to your fork (e.g., rodrigoi/superpowers)
+# upstream should point to anomalyco/superpowers
+```
+
+**Fetch and merge upstream changes:**
+```bash
+# Fetch latest from upstream
+git fetch upstream
+
+# Switch to your fork's main branch
+git checkout main
+
+# Merge upstream changes
+git merge upstream/main
+
+# Push updates to your fork
+git push origin main
+```
+
+**For fork-specific customizations:**
+- Keep custom changes in separate branches, not main
+- Regularly rebase customization branches on upstream/main
+- Consider whether customizations should be contributed upstream or published as a separate plugin

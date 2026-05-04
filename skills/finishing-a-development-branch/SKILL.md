@@ -54,7 +54,7 @@ Present exactly these 4 options:
 Implementation complete. What would you like to do?
 
 1. Merge back to <base-branch> locally
-2. Push and create a Pull Request
+2. Create a Pull Request
 3. Keep the branch as-is (I'll handle it later)
 4. Discard this work
 
@@ -86,12 +86,9 @@ git branch -d <feature-branch>
 
 Then: Cleanup worktree (Step 5)
 
-#### Option 2: Push and Create PR
+#### Option 2: Create a Pull Request
 
 ```bash
-# Push branch
-git push -u origin <feature-branch>
-
 # Create PR
 gh pr create --title "<title>" --body "$(cat <<'EOF'
 ## Summary
@@ -154,7 +151,7 @@ git worktree remove <worktree-path>
 | Option | Merge | Push | Keep Worktree | Cleanup Branch |
 |--------|-------|------|---------------|----------------|
 | 1. Merge locally | ✓ | - | - | ✓ |
-| 2. Create PR | - | ✓ | ✓ | - |
+| 2. Create PR | - | - | ✓ | - |
 | 3. Keep as-is | - | - | ✓ | - |
 | 4. Discard | - | - | - | ✓ (force) |
 
